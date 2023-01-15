@@ -7,6 +7,7 @@ import { createTheme } from '@mui/material/styles'
 import { themeSettings } from './theme'
 import Dashboard from './scenes/bashboard'
 import Layout from './scenes/layout'
+import Products from './scenes/products'
 
 export default function App() {
   const mode = useSelector((state) => state.global.mode)
@@ -21,6 +22,7 @@ export default function App() {
             <Route element={<Layout />}>
               <Route path='/' element={<Navigate to='/dashboard' replace />} />
               <Route path='/dashboard' element={<Dashboard />} />
+              <Route path='/products' element={<Products />} />
             </Route>
           </Routes>
         </ThemeProvider>
