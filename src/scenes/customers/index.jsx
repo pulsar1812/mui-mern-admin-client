@@ -7,7 +7,7 @@ import Header from '../../components/Header'
 
 export default function Customers() {
   const { data, isLoading } = useGetCustomersQuery()
-  console.log(data)
+
   const theme = useTheme()
 
   const columns = [

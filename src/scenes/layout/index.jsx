@@ -12,7 +12,6 @@ export default function Layout() {
 
   const userId = useSelector((state) => state.global.userId)
   const { data } = useGetUserQuery(userId)
-  // console.log('data', data)
 
   const isNonMobile = useMediaQuery('(min-width: 600px')
 
