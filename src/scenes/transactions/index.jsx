@@ -20,8 +20,6 @@ export default function Transactions() {
     search,
   })
 
-  console.log(data)
-
   const theme = useTheme()
 
   const columns = [

@@ -17,31 +17,33 @@ export default function DataGridCustomToolbar({
   return (
     <GridToolbarContainer>
       <FlexBetween width='100%'>
-        <GridToolbarColumnsButton />
-        <GridToolbarDensitySelector />
-        <GridToolbarExport />
+        <FlexBetween>
+          <GridToolbarColumnsButton />
+          <GridToolbarDensitySelector />
+          <GridToolbarExport />
+        </FlexBetween>
+        <TextField
+          variant='standard'
+          label='Search...'
+          value={searchInput}
+          onChange={(e) => setSearchInput(e.target.value)}
+          sx={{ mb: '0.5rem', width: '15rem' }}
+          InputProps={{
+            endAdornment: (
+              <InputAdornment position='end'>
+                <IconButton
+                  onClick={() => {
+                    setSearch(searchInput)
+                    setSearchInput('')
+                  }}
+                >
+                  <SearchIcon />
+                </IconButton>
+              </InputAdornment>
+            ),
+          }}
+        />
       </FlexBetween>
-      <TextField
-        variant='standard'
-        label='Search...'
-        value={searchInput}
-        onChange={(e) => setSearchInput(e.target.value)}
-        sx={{ mb: '0.5rem', width: '15rem' }}
-        InputProps={{
-          endAdornment: (
-            <InputAdornment position='end'>
-              <IconButton
-                onClick={() => {
-                  setSearch(searchInput)
-                  setSearchInput('')
-                }}
-              >
-                <SearchIcon />
-              </IconButton>
-            </InputAdornment>
-          ),
-        }}
-      />
     </GridToolbarContainer>
   )
 }
