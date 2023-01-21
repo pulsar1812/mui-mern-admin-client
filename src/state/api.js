@@ -5,6 +5,7 @@ export const api = createApi({
   baseQuery: fetchBaseQuery({ baseUrl: process.env.REACT_APP_BASE_URL }),
   tagTypes: [
     'User',
+    'Dashboard',
     'Products',
     'Customers',
     'Geography',
@@ -16,6 +17,10 @@ export const api = createApi({
     getUser: builder.query({
       query: (id) => `general/user/${id}`,
       providesTags: ['User'],
+    }),
+    getDashboard: builder.query({
+      query: () => 'general/dashboard',
+      providesTags: ['Dashboard'],
     }),
     getProducts: builder.query({
       query: () => 'client/products',
@@ -54,6 +59,7 @@ export const api = createApi({
 
 export const {
   useGetUserQuery,
+  useGetDashboardQuery,
   useGetProductsQuery,
   useGetCustomersQuery,
   useGetTransactionsQuery,

@@ -8,3 +8,17 @@ body,
   width: 100%;
   font-family: 'Inter', sans-serif;
 }
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #b4b8c9;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #fff;
+}
